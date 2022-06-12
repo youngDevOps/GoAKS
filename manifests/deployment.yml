@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "goaks-962c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "goaks-962c"
+  template:
+    metadata:
+      labels:
+        app: "goaks-962c"
+    spec:
+      containers:
+        - name: "goaks-962c"
+          image: "goaskmain.azurecr.io/goaks"
+          ports:
+          - containerPort: 8080
